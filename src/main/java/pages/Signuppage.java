@@ -18,6 +18,7 @@ public class Signuppage {
     private By signupButton = By.xpath("//button[@data-qa='signup-button']");
 
     public Signuppage(WebDriver driver){
+
         this.driver = driver;
     }
 

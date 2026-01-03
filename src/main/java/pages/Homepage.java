@@ -13,7 +13,7 @@ public class Homepage {
     private WebDriverWait wait;
 
     private By productsLink = By.xpath("//a[@href='/products']");
-    private By signupLink = By.xpath("//a[@href='login']");
+//    private By signupLink = By.xpath("//a[@href='login']");
 
     public Homepage(WebDriver driver){
         this.driver = driver;

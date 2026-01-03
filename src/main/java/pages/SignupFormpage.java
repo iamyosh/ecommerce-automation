@@ -17,7 +17,7 @@ public class SignupFormpage {
 
     //Step 2 fields
     private By titleMr = By.id("id_gender1");
-    private By titleMrs = By.id("id_gender2");
+//    private By titleMrs = By.id("id_gender2");
 
     private By password = By.id("password");
     private By day = By.id("days");
