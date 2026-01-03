@@ -43,6 +43,7 @@ public class SignupFormpage {
         wait = new WebDriverWait(driver, Duration.ofSeconds(10));
     }
 
+
     //Enter the data
     public void fillSignupForm(){
         driver.findElement(titleMr).click();

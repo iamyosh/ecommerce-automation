@@ -2,11 +2,6 @@ package pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.Select;
-
-import java.util.List;
-import java.util.stream.Collectors;
 
 public class Signuppage {
 
@@ -18,7 +13,6 @@ public class Signuppage {
     private By signupButton = By.xpath("//button[@data-qa='signup-button']");
 
     public Signuppage(WebDriver driver){
-
         this.driver = driver;
     }
 
@@ -28,4 +22,7 @@ public class Signuppage {
         driver.findElement(signupButton).click();
     }
 
+    public SignupFormpage goToSignupForm(){
+        return new SignupFormpage(driver);
+    }
 }

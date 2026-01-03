@@ -7,18 +7,19 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import pages.Homepage;
 import pages.Productspage;
+import pages.Signuppage;
 
 public class ProductsTest extends BaseTest{
 
+    private Signuppage signuppage;
+
     @Test
     public void testProductsScrolling()throws InterruptedException{
-        Homepage homepage1 = new Homepage(driver);
-        homepage1.clickProductsLink();
 
         Assert.assertTrue(driver.getTitle().contains("Products"));
 
         productspage.scroll();
-
+        signuppage = productspage.goToSignup();
 
     }
 
