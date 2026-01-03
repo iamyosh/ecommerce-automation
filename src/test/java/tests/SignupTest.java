@@ -1,5 +1,6 @@
 package tests;
 
+import org.openqa.selenium.WebDriver;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.testng.Assert;
@@ -8,21 +9,19 @@ import pages.*;
 
 public class SignupTest extends BaseTest {
 
+    private SignupFormpage signupFormpage;
+    private Signuppage signuppage;
+
     private static final Logger log = LoggerFactory.getLogger(SignupTest.class);
 
     @Test
     public void signupTest() {
-        Homepage homepage1 = new Homepage(driver);
-        homepage1.clickProductsLink();
 
-        Productspage productspage1 = new Productspage(driver);
-        productspage1.goToSignup();
+        // Navigate from Products → Signup
+        signuppage = productspage.goToSignup();
+        signuppage.setSignupDetails("Yosh", "yofefj@gmail.com");
 
-        Signuppage signuppage = new Signuppage(driver);
-        signuppage.setSignupDetails("Yosh", "yykov@gmail.com");
-
-        SignupFormpage signupFormpage = new SignupFormpage(driver);
-        signupFormpage.fillSignupForm();
+        signupFormpage = signuppage.goToSignupForm();
 
     }
 }
