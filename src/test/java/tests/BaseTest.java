@@ -3,6 +3,7 @@ package tests;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeMethod;
 import pages.Homepage;
 import pages.Loginpage;
 import pages.Productspage;
@@ -13,7 +14,7 @@ public class BaseTest {
     protected Homepage homepage;
     protected Productspage productspage;
 
-    @BeforeClass
+    @BeforeMethod
     public void setDriver() throws InterruptedException {
         driver = new ChromeDriver();
 
