@@ -65,7 +65,7 @@ public class SignupFormpage {
         driver.findElement(mobile).sendKeys("0778921621");
 
         driver.findElement(createAccountButton).click();
-        driver.findElement(continueButton).click();
+        driver.findElement(continueButton).click();     //back to homepage
     }
 
 
