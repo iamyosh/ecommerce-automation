@@ -12,7 +12,7 @@ import java.time.Duration;
 public class Productspage {
     private WebDriver driver;
     private WebDriverWait wait;
-    private By signupLink = By.xpath("//a[@href='/login']");
+//    private By signupLink = By.xpath("//a[@href='/login']");
 
     private By product1 = By.cssSelector("a.add-to-cart[data-product-id='2']");
     private By product2 = By.cssSelector("a.add-to-cart[data-product-id='3']");
@@ -25,16 +25,16 @@ public class Productspage {
         wait = new WebDriverWait(driver, Duration.ofSeconds(5));
     }
 
-    public void scroll() throws InterruptedException{
+    public void scroll(){
         JavascriptExecutor js = (JavascriptExecutor)driver;
         js.executeScript("window.scroll(0,800)");   //scroll down
         js.executeScript("window.scroll(0,-800)");  //scroll back up
     }
 
-    public Signuppage goToSignup() {
-        driver.findElement(signupLink).click();
-        return new Signuppage(driver);
-    }
+//    public Signuppage goToSignup() {
+//        driver.findElement(signupLink).click();
+//        return new Signuppage(driver);
+//    }
 
     public void addProductsToCart(){
         //product 1

@@ -12,8 +12,8 @@ public class Homepage {
     private WebDriver driver;
     private WebDriverWait wait;
 
-    private By productsLink = By.xpath("//a[@href='/products']");
-//    private By signupLink = By.xpath("//a[@href='login']");
+//    private By productsLink = By.xpath("//a[@href='/products']");
+    private By signupLink = By.xpath("//a[@href='/login']");
 
     public Homepage(WebDriver driver){
         this.driver = driver;
@@ -31,9 +31,14 @@ public class Homepage {
 
     }
 
-    public Productspage clickProductsLink(){
-        wait.until(ExpectedConditions.elementToBeClickable(productsLink)).click();
-        return new Productspage(driver);
+//    public Productspage clickProductsLink(){
+//        wait.until(ExpectedConditions.elementToBeClickable(productsLink)).click();
+//        return new Productspage(driver);
+//    }
+
+    public Signuppage goToSignup() {
+        wait.until(ExpectedConditions.elementToBeClickable(signupLink)).click();
+        return new Signuppage(driver);
     }
 
 

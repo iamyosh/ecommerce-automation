@@ -5,27 +5,38 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
-import pages.Homepage;
-import pages.Productspage;
-import pages.Signuppage;
+import pages.*;
 
 public class ProductsTest extends BaseTest{
 
     private Signuppage signuppage;
+    private SignupFormpage signupFormpage;
+    private CartPage cartPage;
+    private Productspage productspage;
 
     @Test
-    public void testProductsScrolling()throws InterruptedException{
+    public void testProductsPage() throws InterruptedException{
 
-        Assert.assertTrue(driver.getTitle().contains("Products"));
+        //homepage -> signup
+        signuppage = homepage.goToSignup();
+        signuppage.setSignupDetails("Yosh", "yofj@gmail.com");
+
+        //signup -> signup form
+        signupFormpage = signuppage.goToSignupForm();
+        signupFormpage.fillSignupForm();
+        signupFormpage.backToProducts();
+
+        //homepage -> products
+
+        Assert.assertTrue(driver.getTitle().contains("/products"));
 
         productspage.scroll();
-        //products -> signup
-        signuppage = productspage.goToSignup();
-
         productspage.addProductsToCart();
-        productspage.goToCart();
+        cartPage = productspage.goToCart();
+
+        // Simple cart assertion
+        Assert.assertTrue(driver.getCurrentUrl().contains("/view_cart"));
 
     }
-
 
 }

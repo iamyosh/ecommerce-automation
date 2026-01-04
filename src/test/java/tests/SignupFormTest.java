@@ -11,16 +11,19 @@ public class SignupFormTest extends BaseTest{
 
     private SignupFormpage signupFormpage;
     private Signuppage signuppage;
+    private Productspage productspage;
 
     @Test
     public void OptionsTest(){
 
-        // Products → Signup (navigation happens here)
-        signuppage = productspage.goToSignup();
-        signuppage.setSignupDetails("Yosh", "yofefj@gmail.com");
+        // homepage → Signup (navigation happens here)
+        signuppage = homepage.goToSignup();
+        signuppage.setSignupDetails("Yosh", "yofj@gmail.com");
 
         // Move to full signup form page
         signupFormpage = signuppage.goToSignupForm();
         signupFormpage.fillSignupForm();
+
+        productspage = signupFormpage.backToProducts();
     }
 }

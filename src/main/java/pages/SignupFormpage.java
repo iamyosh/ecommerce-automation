@@ -3,6 +3,7 @@ package pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -13,6 +14,9 @@ import java.util.stream.Collectors;
 public class SignupFormpage {
     private WebDriver driver;
     private WebDriverWait wait;
+
+    private By productsLink = By.xpath("//a[@href='/products']");
+
 
     //Step 2 fields
     private By titleMr = By.id("id_gender1");
@@ -66,6 +70,11 @@ public class SignupFormpage {
 
         driver.findElement(createAccountButton).click();
         driver.findElement(continueButton).click();     //back to homepage
+    }
+
+    public Productspage backToProducts(){
+        wait.until(ExpectedConditions.elementToBeClickable(productsLink)).click();
+        return new Productspage(driver);
     }
 
 

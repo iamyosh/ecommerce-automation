@@ -7,12 +7,13 @@ import org.testng.annotations.BeforeMethod;
 import pages.Homepage;
 import pages.Loginpage;
 import pages.Productspage;
+import pages.Signuppage;
 
 public class BaseTest {
 
     protected WebDriver driver;
     protected Homepage homepage;
-    protected Productspage productspage;
+    protected Signuppage signuppage;
 
     @BeforeMethod
     public void setDriver() throws InterruptedException {
@@ -22,7 +23,7 @@ public class BaseTest {
         homepage = new Homepage(driver);
 
         homepage.scrollDown();
-        productspage = homepage.clickProductsLink();
+        signuppage = homepage.goToSignup();
 
         //BaseTest only load the initial URL.(that's why the products test etc... are repeated)
         // Beyond that, each test navigates in each test page
