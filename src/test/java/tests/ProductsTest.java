@@ -19,7 +19,7 @@ public class ProductsTest extends BaseTest{
 
         //homepage -> signup
         signuppage = homepage.goToSignup();
-        signuppage.setSignupDetails("Yosh", "yofj@gmail.com");
+        signuppage.setSignupDetails("Yosh", "fkjkf@gmail.com");
 
         //signup -> signup form
         signupFormpage = signuppage.goToSignupForm();
@@ -27,11 +27,15 @@ public class ProductsTest extends BaseTest{
         signupFormpage.backToProducts();
 
         //homepage -> products
+        System.out.println("TITLE: " + driver.getTitle());
+        System.out.println("URL: " + driver.getCurrentUrl());
 
-        Assert.assertTrue(driver.getTitle().contains("/products"));
+        Assert.assertTrue(driver.getCurrentUrl().contains("/products"));
 
         productspage.scroll();
         productspage.addProductsToCart();
+
+        //products -> cart
         cartPage = productspage.goToCart();
 
         // Simple cart assertion
