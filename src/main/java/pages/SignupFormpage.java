@@ -11,13 +11,12 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class SignupFormpage {
-
     private WebDriver driver;
     private WebDriverWait wait;
 
     //Step 2 fields
     private By titleMr = By.id("id_gender1");
-//    private By titleMrs = By.id("id_gender2");
+//  private By titleMrs = By.id("id_gender2");
 
     private By password = By.id("password");
     private By day = By.id("days");
@@ -67,7 +66,6 @@ public class SignupFormpage {
 
         driver.findElement(createAccountButton).click();
         driver.findElement(continueButton).click();
-
     }
 
 

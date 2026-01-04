@@ -17,7 +17,6 @@ public class BaseTest {
     @BeforeMethod
     public void setDriver() throws InterruptedException {
         driver = new ChromeDriver();
-
         driver.get("https://automationexercise.com/");
 
         homepage = new Homepage(driver);
@@ -25,5 +24,7 @@ public class BaseTest {
         homepage.scrollDown();
         productspage = homepage.clickProductsLink();
 
+        //BaseTest only load the initial URL.(that's why the products test etc... are repeated)
+        // Beyond that, each test navigates in each test page
     }
 }

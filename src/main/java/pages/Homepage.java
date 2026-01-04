@@ -24,10 +24,10 @@ public class Homepage {
     public void scrollDown()throws InterruptedException {
         Thread.sleep(3000);
         JavascriptExecutor jse = (JavascriptExecutor) driver;
-        jse.executeScript("window.scroll(0,800)");  //scroll down
+        jse.executeScript("window.scroll(0,9000)");  //scroll down
 
         Thread.sleep(2000);
-        jse.executeScript("window.scroll(0,-800)"); //scroll back up
+        jse.executeScript("window.scroll(0,-9000)"); //scroll back up
 
     }
 
