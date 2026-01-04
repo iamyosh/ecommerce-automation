@@ -19,7 +19,11 @@ public class ProductsTest extends BaseTest{
         Assert.assertTrue(driver.getTitle().contains("Products"));
 
         productspage.scroll();
+        //products -> signup
         signuppage = productspage.goToSignup();
+
+        productspage.addProductsToCart();
+        productspage.goToCart();
 
     }
 
