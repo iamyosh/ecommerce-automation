@@ -26,12 +26,9 @@ public class Productspage {
     }
 
     public void scroll() throws InterruptedException{
-        Thread.sleep(2000);
         JavascriptExecutor js = (JavascriptExecutor)driver;
-        js.executeScript("window.scroll(0,800)");
-
-        Thread.sleep(2000);
-        js.executeScript("window.scroll(0,-800)");
+        js.executeScript("window.scroll(0,800)");   //scroll down
+        js.executeScript("window.scroll(0,-800)");  //scroll back up
     }
 
     public Signuppage goToSignup() {
@@ -41,13 +38,13 @@ public class Productspage {
 
     public void addProductsToCart(){
         //product 1
-        driver.findElement(product1).click();
+        wait.until(ExpectedConditions.elementToBeClickable(product1)).click();
         wait.until(ExpectedConditions.elementToBeClickable(continueShoppingButton)).click();    //popup window
 
         wait.until(ExpectedConditions.invisibilityOfElementLocated(modal));
 
         //product 2
-        driver.findElement(product2).click();
+        wait.until(ExpectedConditions.elementToBeClickable(product2)).click();
         wait.until(ExpectedConditions.elementToBeClickable(continueShoppingButton)).click();    //popup window
 
         wait.until(ExpectedConditions.invisibilityOfElementLocated(modal));
