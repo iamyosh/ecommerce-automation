@@ -1,5 +1,6 @@
 package pages;
 
+import org.checkerframework.checker.units.qual.C;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -17,6 +18,7 @@ public class Productspage {
     private By product2 = By.cssSelector("a.add-to-cart[data-product-id='3']");
     private By continueShoppingButton = By.cssSelector("button.close-modal");
     private By modal = By.className("modal-content");
+    private By cartLink = By.xpath("//a[@href='/view_cart']");
 
     public Productspage(WebDriver driver){
         this.driver = driver;
@@ -26,10 +28,10 @@ public class Productspage {
     public void scroll() throws InterruptedException{
         Thread.sleep(2000);
         JavascriptExecutor js = (JavascriptExecutor)driver;
-        js.executeScript("window.scroll(0,9000)");
+        js.executeScript("window.scroll(0,800)");
 
         Thread.sleep(2000);
-        js.executeScript("window.scroll(0,-9000)");
+        js.executeScript("window.scroll(0,-800)");
     }
 
     public Signuppage goToSignup() {
@@ -51,7 +53,9 @@ public class Productspage {
         wait.until(ExpectedConditions.invisibilityOfElementLocated(modal));
     }
 
-    public void goToCart(){
+    public CartPage goToCart(){
+        driver.findElement(cartLink).click();
+        return new CartPage(driver);
 
     }
 }
