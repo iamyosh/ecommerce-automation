@@ -21,10 +21,7 @@ public class CartPage {
     }
 
     public void clickCheckout(){
-        WebElement checkOut = driver.findElement(proceedToCheckoutButton);
-        JavascriptExecutor jse = (JavascriptExecutor) driver;
-        jse.executeScript("arguments[0], scrollIntoView(true)", checkOut);
-        jse.executeScript("arguments[0], click()", checkOut);
+        driver.findElement(proceedToCheckoutButton).click();
     }
 
     public void scrollPage()throws InterruptedException{
@@ -33,13 +30,15 @@ public class CartPage {
         jse.executeScript("window.scroll(0,900)");  //scroll down
 
         driver.findElement(comment).sendKeys("I would like the T-shirt in black color. Thank you");
-
-        WebElement order = driver.findElement(placeOrder);
-        JavascriptExecutor js = (JavascriptExecutor) driver;
-        js.executeScript("arguments[0], scrollIntoView(true)", order);
-        js.executeScript("arguments[0], click()", order);
     }
 
-    public
+    public PaymentPage goToPayment(){
+        WebElement order = driver.findElement(placeOrder);
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("arguments[0].scrollIntoView(true)", order);
+        js.executeScript("arguments[0].click();", order);
+
+        return new PaymentPage(driver);
+    }
 
 }
