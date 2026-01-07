@@ -33,6 +33,8 @@ public class CartTest extends BaseTest{
         cartPage = productspage.goToCart();
         cartPage.clickCheckout();
         cartPage.scrollPage();
+
+        //cart -> payment
         cartPage.goToPayment();
 
     }
