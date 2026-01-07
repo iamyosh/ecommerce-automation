@@ -68,7 +68,9 @@ public class SignupFormpage {
         driver.findElement(zip).sendKeys("12131");
         driver.findElement(mobile).sendKeys("0778921621");
 
-        driver.findElement(createAccountButton).click();
+        wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        wait.until(ExpectedConditions.elementToBeClickable(createAccountButton)).click();
+
         driver.findElement(continueButton).click();     //back to homepage
     }
 
