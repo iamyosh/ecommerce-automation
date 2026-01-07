@@ -11,8 +11,6 @@ import java.time.Duration;
 public class Homepage {
     private WebDriver driver;
     private WebDriverWait wait;
-
-//    private By productsLink = By.xpath("//a[@href='/products']");
     private By signupLink = By.xpath("//a[@href='/login']");
 
     public Homepage(WebDriver driver){
@@ -30,11 +28,6 @@ public class Homepage {
         jse.executeScript("window.scroll(0,-9000)"); //scroll back up
 
     }
-
-//    public Productspage clickProductsLink(){
-//        wait.until(ExpectedConditions.elementToBeClickable(productsLink)).click();
-//        return new Productspage(driver);
-//    }
 
     public Signuppage goToSignup() {
         wait.until(ExpectedConditions.elementToBeClickable(signupLink)).click();

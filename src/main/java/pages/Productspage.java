@@ -12,7 +12,6 @@ import java.time.Duration;
 public class Productspage {
     private WebDriver driver;
     private WebDriverWait wait;
-//    private By signupLink = By.xpath("//a[@href='/login']");
 
     private By product1 = By.cssSelector("a.add-to-cart[data-product-id='2']");
     private By product2 = By.cssSelector("a.add-to-cart[data-product-id='3']");
@@ -31,17 +30,12 @@ public class Productspage {
         js.executeScript("window.scroll(0,-800)");  //scroll back up
     }
 
-//    public Signuppage goToSignup() {
-//        driver.findElement(signupLink).click();
-//        return new Signuppage(driver);
-//    }
-
     public void addProductsToCart(){
         //product 1
         wait.until(ExpectedConditions.elementToBeClickable(product1)).click();
         wait.until(ExpectedConditions.elementToBeClickable(continueShoppingButton)).click();    //popup window
 
-        wait.until(ExpectedConditions.invisibilityOfElementLocated(modal));
+        wait.until(ExpectedConditions.invisibilityOfElementLocated(modal));     //make sure the popup is closed
 
         //product 2
         wait.until(ExpectedConditions.elementToBeClickable(product2)).click();

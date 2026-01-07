@@ -17,7 +17,7 @@ public class SignupTest extends BaseTest {
     @Test
     public void signupTest() {
 
-        // Navigate from Products → Signup
+        // Navigate from home → Signup
         signuppage = homepage.goToSignup();
         signuppage.setSignupDetails("Yosh", "fjf@gmail.com");
 

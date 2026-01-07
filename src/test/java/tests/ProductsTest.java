@@ -24,11 +24,9 @@ public class ProductsTest extends BaseTest{
         //signup -> signup form
         signupFormpage = signuppage.goToSignupForm();
         signupFormpage.fillSignupForm();
-        signupFormpage.backToProducts();
 
-        //homepage -> products
-//        System.out.println("TITLE: " + driver.getTitle());
-//        System.out.println("URL: " + driver.getCurrentUrl());
+        //signupForm -> products
+        signupFormpage.backToProducts();
 
         productspage = new Productspage(driver);
         Assert.assertTrue(driver.getCurrentUrl().contains("/products"));
@@ -38,7 +36,6 @@ public class ProductsTest extends BaseTest{
 
         //products -> cart
         cartPage = productspage.goToCart();
-
         // Simple cart assertion
         Assert.assertTrue(driver.getCurrentUrl().contains("/view_cart"));
 
