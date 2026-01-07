@@ -1,6 +1,7 @@
 package pages;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -68,8 +69,11 @@ public class SignupFormpage {
         driver.findElement(zip).sendKeys("12131");
         driver.findElement(mobile).sendKeys("0778921621");
 
-        wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        wait.until(ExpectedConditions.elementToBeClickable(createAccountButton)).click();
+        // click Create Account safely (ads issue fix)
+        WebElement createBtn = driver.findElement(createAccountButton);     //store in a web element variable called createBtn
+        JavascriptExecutor js = (JavascriptExecutor) driver;                //cast driver for js executor to use js
+        js.executeScript("arguments[0].scrollIntoView(true);", createBtn);  //'scrollIntoView(true)' scrolls pg until button is visible
+        js.executeScript("arguments[0].click();", createBtn);         //js directly clicks the button
 
         driver.findElement(continueButton).click();     //back to homepage
     }
