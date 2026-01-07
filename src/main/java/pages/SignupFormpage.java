@@ -73,7 +73,7 @@ public class SignupFormpage {
         WebElement createBtn = driver.findElement(createAccountButton);     //store in a web element variable called createBtn
         JavascriptExecutor js = (JavascriptExecutor) driver;                //cast driver for js executor to use js
         js.executeScript("arguments[0].scrollIntoView(true);", createBtn);  //'scrollIntoView(true)' scrolls pg until button is visible
-        js.executeScript("arguments[0].click();", createBtn);         //js directly clicks the button
+        js.executeScript("arguments[0].click();", createBtn);         //js directly clicks the button //arguments[0] -> createBtn
 
         driver.findElement(continueButton).click();     //back to homepage
     }
