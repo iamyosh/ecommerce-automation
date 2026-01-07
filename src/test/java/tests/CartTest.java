@@ -15,7 +15,7 @@ public class CartTest extends BaseTest{
     @Test
     public void testCart(){
         signuppage = homepage.goToSignup();
-        signuppage.setSignupDetails("Yosh", "fjf@gmail.com");
+        signuppage.setSignupDetails("Yosh", "fjfyy@gmail.com");
 
         signupFormpage = signuppage.goToSignupForm();
         signupFormpage.fillSignupForm();

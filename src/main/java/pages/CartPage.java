@@ -14,5 +14,8 @@ public class CartPage {
         wait = new WebDriverWait(driver, Duration.ofSeconds(5));
     }
 
+    public void clickCheckout(){
+
+    }
 
 }
