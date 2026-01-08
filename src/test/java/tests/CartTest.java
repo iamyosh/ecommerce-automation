@@ -2,10 +2,7 @@ package tests;
 
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.Test;
-import pages.CartPage;
-import pages.Productspage;
-import pages.SignupFormpage;
-import pages.Signuppage;
+import pages.*;
 
 public class CartTest extends BaseTest{
     private WebDriver driver;
@@ -13,6 +10,7 @@ public class CartTest extends BaseTest{
     private SignupFormpage signupFormpage;
     private Productspage productspage;
     private CartPage cartPage;
+    private PaymentPage paymentPage;
 
     @Test
     public void testCart() throws InterruptedException {
@@ -35,7 +33,7 @@ public class CartTest extends BaseTest{
         cartPage.scrollPage();
 
         //cart -> payment
-        cartPage.goToPayment();
+        paymentPage = cartPage.goToPayment();
 
     }
 }
