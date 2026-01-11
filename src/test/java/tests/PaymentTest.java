@@ -16,7 +16,7 @@ public class PaymentTest extends BaseTest{
     public void testPayment()throws InterruptedException{
         //home -> signup
         signuppage = homepage.goToSignup();
-        signuppage.setSignupDetails("Yosh", "wwlloo@gmail.com");
+        signuppage.setSignupDetails("Yosh", "walloo@gmail.com");
 
         //signup -> signup form
         signupFormpage = signuppage.goToSignupForm();

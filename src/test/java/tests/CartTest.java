@@ -16,7 +16,7 @@ public class CartTest extends BaseTest{
     public void testCart() throws InterruptedException {
         //home -> signup
         signuppage = homepage.goToSignup();
-        signuppage.setSignupDetails("Yosh", "wwlloo@gmail.com");
+        signuppage.setSignupDetails("Yosh", "walloo@gmail.com");
 
         //signup -> signup form
         signupFormpage = signuppage.goToSignupForm();
@@ -25,7 +25,7 @@ public class CartTest extends BaseTest{
         //signup form -> products
         productspage = signupFormpage.backToProducts();
         productspage.scroll();
-        productspage.addProductsToCart();;
+        productspage.addProductsToCart();
 
         //products -> cart
         cartPage = productspage.goToCart();
