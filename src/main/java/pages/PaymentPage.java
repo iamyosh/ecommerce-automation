@@ -18,13 +18,14 @@ public class PaymentPage {
     private By expMonth = By.cssSelector(".form-control.card-expiry-month");
     private By expYear = By.cssSelector(".form-control.card-expiry-year");
     private By paymentButton = By.cssSelector(".form-control.btn.btn-primary.submit-button");
+    private By downloadInvoiceButton = By.cssSelector(".btn.btn-default.check_out");
 
     public PaymentPage(WebDriver driver){
         this.driver = driver;
         wait = new WebDriverWait(driver, Duration.ofSeconds(5));
     }
 
-    public void PaymentDetails(){
+    public void PaymentDetails() {
         wait.until(ExpectedConditions.visibilityOfElementLocated(cardName)).sendKeys("Alexis Yosh");
 
         WebElement cardNo = wait.until(ExpectedConditions.presenceOfElementLocated(cardNumber));
@@ -37,5 +38,11 @@ public class PaymentPage {
         driver.findElement(expYear).sendKeys("2029");
 
         wait.until(ExpectedConditions.elementToBeClickable(paymentButton)).click();
+
     }
+
+        //download invoice
+        public void downloadInvoice(){
+            wait.until(ExpectedConditions.elementToBeClickable(downloadInvoiceButton)).click();
+        }
 }

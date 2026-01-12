@@ -1,8 +1,11 @@
 package tests;
 
 import org.openqa.selenium.WebDriver;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.*;
+
+import java.io.File;
 
 public class PaymentTest extends BaseTest{
     private WebDriver driver;
@@ -16,7 +19,7 @@ public class PaymentTest extends BaseTest{
     public void testPayment()throws InterruptedException{
         //home -> signup
         signuppage = homepage.goToSignup();
-        signuppage.setSignupDetails("Yosh", "wealloo@gmail.com");
+        signuppage.setSignupDetails("Yosh", "wearrlloo@gmail.com");
 
         //signup -> signup form
         signupFormpage = signuppage.goToSignupForm();
@@ -36,5 +39,10 @@ public class PaymentTest extends BaseTest{
         paymentPage = cartPage.goToPayment();
         paymentPage.PaymentDetails();
 
+        paymentPage.downloadInvoice();
+        Thread.sleep(5000);     //wait for file to download
+
+        File invoice = new File(System.getProperty("user.dir") + "/resources/downloads/invoice.txt");
+        Assert.assertTrue(invoice.exists(), "Invoice was NOT downloaded!");
     }
 }
