@@ -8,7 +8,7 @@ import pages.*;
 import java.io.File;
 
 public class PaymentTest extends BaseTest{
-    private WebDriver driver;
+//    private WebDriver driver;
     private Signuppage signuppage;
     private SignupFormpage signupFormpage;
     private Productspage productspage;
@@ -20,7 +20,7 @@ public class PaymentTest extends BaseTest{
     public void testPayment()throws InterruptedException{
         //home -> signup
         signuppage = homepage.goToSignup();
-        signuppage.setSignupDetails("Yosh", "ududddd@gmail.com");
+        signuppage.setSignupDetails("Yosh", "udua@gmail.com");
 
         //signup -> signup form
         signupFormpage = signuppage.goToSignupForm();

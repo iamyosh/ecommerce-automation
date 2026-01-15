@@ -33,7 +33,7 @@ public class PaymentPage {
         WebElement cardNo = wait.until(ExpectedConditions.presenceOfElementLocated(cardNumber));
         JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("arguments[0].scrollIntoView(true);", cardNo);
-        js.executeScript("arguments[0].value='5165416351';", cardNo);           //entering card no
+        js.executeScript("arguments[0].value='5165416351';", cardNo);           //entering card no (js used here to avoid all ads tht appear)
 
         driver.findElement(cvc).sendKeys("311");
         driver.findElement(expMonth).sendKeys("03");

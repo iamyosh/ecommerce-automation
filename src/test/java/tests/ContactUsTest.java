@@ -10,7 +10,6 @@ import pages.*;
 import java.time.Duration;
 
 public class ContactUsTest extends BaseTest{
-    protected WebDriver driver;
     private Signuppage signuppage;
     private SignupFormpage signupFormpage;
     private Productspage productspage;
@@ -23,7 +22,7 @@ public class ContactUsTest extends BaseTest{
     public void setContact()throws InterruptedException{
         //home -> signup
         signuppage = homepage.goToSignup();
-        signuppage.setSignupDetails("Yosh", "ududddd@gmail.com");
+        signuppage.setSignupDetails("Yosh", "udua@gmail.com");
 
         //signup -> signup form
         signupFormpage = signuppage.goToSignupForm();
@@ -53,6 +52,9 @@ public class ContactUsTest extends BaseTest{
 
         //make sure that we're still on contact us pg url
         Assert.assertTrue(driver.getCurrentUrl().contains("contact_us"));
+
+        contactUsPage.backHome();
+        contactUsPage.subscription();
 
     }
 }

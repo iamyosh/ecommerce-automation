@@ -18,7 +18,7 @@ public class SignupFormTest extends BaseTest{
 
         // homepage → Signup (navigation happens here)
         signuppage = homepage.goToSignup();
-        signuppage.setSignupDetails("Yosh", "ududddd@gmail.com");
+        signuppage.setSignupDetails("Yosh", "udua@gmail.com");
 
         // Move to full signup form page
         signupFormpage = signuppage.goToSignupForm();

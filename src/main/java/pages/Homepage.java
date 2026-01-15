@@ -8,6 +8,9 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
+//Page Object = actions on the page
+// Test = flow + assertions + browser events
+
 public class Homepage {
     private WebDriver driver;
     private WebDriverWait wait;
