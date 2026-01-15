@@ -19,20 +19,19 @@ public class BaseTest {
     protected Homepage homepage;
     protected Signuppage signuppage;
 
-    @BeforeMethod
+    @BeforeClass
     public void setDriver() throws InterruptedException {
-        String downloadPath = System.getProperty("user.dir") + "/resources/downloads";
+//        String downloadPath = System.getProperty("user.dir") + "/resources/downloads";
+//
+//        Map<String, Object> prefs = new HashMap<>();
+//        prefs.put("download.default_directory", downloadPath);
+//        prefs.put("download.prompt_for_download", false);
+//        prefs.put("safebrowsing.enabled", true);
+//
+//        ChromeOptions options = new ChromeOptions();
+//        options.setExperimentalOption("prefs", prefs);
 
-        ChromeOptions options = new ChromeOptions();
-
-        Map<String, Object> prefs = new HashMap<>();
-        prefs.put("download.default_directory", downloadPath);
-        prefs.put("download.prompt_for_download", false);
-        prefs.put("safebrowsing.enabled", true);
-
-        options.setExperimentalOption("prefs", prefs);
-
-        driver = new ChromeDriver(options);
+        driver = new ChromeDriver();
 
         driver.get("https://automationexercise.com/");
         homepage = new Homepage(driver);

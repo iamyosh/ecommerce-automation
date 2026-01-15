@@ -19,7 +19,7 @@ public class ProductsTest extends BaseTest{
 
         //homepage -> signup
         signuppage = homepage.goToSignup();
-        signuppage.setSignupDetails("Yosh", "wearrlloo@gmail.com");
+        signuppage.setSignupDetails("Yosh", "wearrrrruo@gmail.com");
 
         //signup -> signup form
         signupFormpage = signuppage.goToSignupForm();

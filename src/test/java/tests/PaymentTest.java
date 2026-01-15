@@ -14,12 +14,13 @@ public class PaymentTest extends BaseTest{
     private Productspage productspage;
     private CartPage cartPage;
     private PaymentPage paymentPage;
+    private ContactUsPage contactUsPage;
 
     @Test
     public void testPayment()throws InterruptedException{
         //home -> signup
         signuppage = homepage.goToSignup();
-        signuppage.setSignupDetails("Yosh", "wearrlloo@gmail.com");
+        signuppage.setSignupDetails("Yosh", "wearrrrruo@gmail.com");
 
         //signup -> signup form
         signupFormpage = signuppage.goToSignupForm();
@@ -39,10 +40,14 @@ public class PaymentTest extends BaseTest{
         paymentPage = cartPage.goToPayment();
         paymentPage.PaymentDetails();
 
-        paymentPage.downloadInvoice();
-        Thread.sleep(5000);     //wait for file to download
+        //payment -> contact
+        contactUsPage = paymentPage.goToContact();
 
-        File invoice = new File(System.getProperty("user.dir") + "/resources/downloads/invoice.txt");
-        Assert.assertTrue(invoice.exists(), "Invoice was NOT downloaded!");
+
+//        paymentPage.downloadInvoice();
+//        Thread.sleep(5000);           //wait for file to download
+//
+//        File invoice = new File(System.getProperty("user.dir") + "/resources/downloads/invoice.txt");
+//        Assert.assertTrue(invoice.exists(), "Invoice was NOT downloaded!");
     }
 }

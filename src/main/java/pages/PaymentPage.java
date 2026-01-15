@@ -19,6 +19,8 @@ public class PaymentPage {
     private By expYear = By.cssSelector(".form-control.card-expiry-year");
     private By paymentButton = By.cssSelector(".form-control.btn.btn-primary.submit-button");
     private By downloadInvoiceButton = By.cssSelector(".btn.btn-default.check_out");
+    private By continueButton = By.cssSelector(".btn.btn-primary");
+    private By contactUsLink = By.xpath("//a[@href='/contact_us']");
 
     public PaymentPage(WebDriver driver){
         this.driver = driver;
@@ -38,11 +40,17 @@ public class PaymentPage {
         driver.findElement(expYear).sendKeys("2029");
 
         wait.until(ExpectedConditions.elementToBeClickable(paymentButton)).click();
-
+        wait.until(ExpectedConditions.elementToBeClickable(continueButton)).click();
     }
 
         //download invoice
-        public void downloadInvoice(){
-            wait.until(ExpectedConditions.elementToBeClickable(downloadInvoiceButton)).click();
-        }
+//        public void downloadInvoice(){
+//            wait.until(ExpectedConditions.elementToBeClickable(downloadInvoiceButton)).click();
+//        }
+
+    public ContactUsPage goToContact(){
+        driver.findElement(contactUsLink).click();
+        return new ContactUsPage(driver);
+    }
+
 }
