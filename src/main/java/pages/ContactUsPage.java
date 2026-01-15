@@ -8,12 +8,12 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 
 public class ContactUsPage {
-    private WebDriver driver;
+    protected WebDriver driver;
     private WebDriverWait wait;
     private By nameField = By.cssSelector("input[placeholder='Name']");
     private By emailField = By.cssSelector("input[placeholder='Email']");
     private By subjectField = By.cssSelector("input[placeholder='Subject']");
-    private By messageField = By.cssSelector("input[placeholder='Your Message Here']");
+    private By messageField = By.cssSelector("textarea[placeholder='Your Message Here']");
     private By submitButton = By.cssSelector(".btn.btn-primary.pull-left.submit_form");
 
     public ContactUsPage(WebDriver driver){
