@@ -22,6 +22,8 @@ public class ContactUsPage {
     private By subscribeEmail = By.id("susbscribe_email");
     private By subscribeButton = By.id("subscribe");
     private By scrollUpButton = By.id("scrollUp");
+    private By logoutLink = By.xpath("//a[@href='/logout']");
+
 
     public ContactUsPage(WebDriver driver){
         this.driver = driver;
@@ -43,5 +45,10 @@ public class ContactUsPage {
         wait.until(ExpectedConditions.visibilityOfElementLocated(subscribeEmail)).sendKeys("helloalexis@gmail.com");
         wait.until(ExpectedConditions.elementToBeClickable(subscribeButton)).click();
         wait.until(ExpectedConditions.elementToBeClickable(scrollUpButton)).click();
+    }
+
+    public LogoutPage gotoLogout(){
+        wait.until(ExpectedConditions.elementToBeClickable(logoutLink)).click();
+        return new LogoutPage(driver);
     }
 }

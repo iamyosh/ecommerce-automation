@@ -1,6 +1,5 @@
 package tests;
 
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
@@ -9,7 +8,7 @@ import pages.*;
 
 import java.time.Duration;
 
-public class ContactUsTest extends BaseTest{
+public class LogoutTest extends BaseTest{
     private Signuppage signuppage;
     private SignupFormpage signupFormpage;
     private Productspage productspage;
@@ -20,10 +19,10 @@ public class ContactUsTest extends BaseTest{
     private WebDriverWait wait;
 
     @Test
-    public void setContact()throws InterruptedException{
+    public void setContact()throws InterruptedException {
         //home -> signup
         signuppage = homepage.goToSignup();
-        signuppage.setSignupDetails("Yosh", "udywq@gmail.com");
+        signuppage.setSignupDetails("Yosh", "qqrrtxww@gmail.com");
 
         //signup -> signup form
         signupFormpage = signuppage.goToSignupForm();
@@ -32,7 +31,8 @@ public class ContactUsTest extends BaseTest{
         //signup form -> products
         productspage = signupFormpage.backToProducts();
         productspage.scroll();
-        productspage.addProductsToCart();;
+        productspage.addProductsToCart();
+        ;
 
         //products -> cart
         cartPage = productspage.goToCart();
@@ -58,6 +58,6 @@ public class ContactUsTest extends BaseTest{
 
         //contact us -> logout
         logoutPage = contactUsPage.gotoLogout();
-
+        logoutPage.logBack();
     }
 }
