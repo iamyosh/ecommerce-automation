@@ -32,3 +32,6 @@ Automation test correctly reports login as successful even though the applicatio
 
 **Status**
 * Open
+
+**Evidence**
+* Screenshot attached: resources/screenshots/BUG-01-failed-login.png 
