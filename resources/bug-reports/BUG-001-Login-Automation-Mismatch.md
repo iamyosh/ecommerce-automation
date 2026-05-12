@@ -1,7 +1,7 @@
-**BUG-01- Incorrect test result (Login Test passes but LoginFails)**
+**BUG-001- Incorrect test result (Login Test passes but LoginFails)**
 
 **Summary**
-Automation test correctly reports login as successful even though the application displays and error message and user is not logged in.
+* Automation test correctly reports login as successful even though the application displays and error message and user is not logged in.
 
 **Environment**
 * Browser: Chrome 147
