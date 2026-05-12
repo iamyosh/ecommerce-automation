@@ -9,7 +9,7 @@ import java.time.Duration;
 public class Loginpage {
     private WebDriver driver;
 
-    private By loginEmail = By.xpath("/input[@data-qa='login-email']");
+    private By loginEmail = By.xpath("//input[@data-qa='login-email']");
     private By loginPassword = By.xpath("//input[@data-qa='login-password']");
     private By loginButton = By.xpath("//button[@data-qa='login-button']");
 
