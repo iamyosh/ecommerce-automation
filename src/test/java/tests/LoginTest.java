@@ -30,7 +30,7 @@ public class LoginTest extends BaseTest {
             Files.createDirectories(Paths.get("resources/screenshots"));
             Files.move(
                     screenshot.toPath(),
-                    Paths.get("resources/screenshots/BUG-01-failed-login.png"),
+                    Paths.get("resources/screenshots/BUG-001-failed-login.png"),
                     StandardCopyOption.REPLACE_EXISTING
             );
         } catch (IOException exception) {
