@@ -27,5 +27,5 @@
 * High
 
 **Evidence**
-* Screenshot attached: target/screenshots/BUG-002-missing-validation.png
+* Screenshot attached: screenshots/BUG-002-missing-validation.png
 
