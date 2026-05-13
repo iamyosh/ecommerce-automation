@@ -1,6 +1,6 @@
 **Test Case ID**: TC-Login-002
 
-**Test Case Title**: Verify login with invalid password
+**Test Case Title**: Verify login with invalid email
 
 **Preconditions**
 * User must already be signed up.
@@ -8,19 +8,19 @@
 
 **Test Steps**
 * Open Login page
-* Enter valid email
+* Enter incorrect email
 * Enter valid password
 * Click Login button
 
 **Test Data**
-* Email: test@example.com
+* Email: test@ex.com
 * Password: 123456
 
 **Expected Result**
-* User should successfully log in and be redirected to the dashboard
+* System should display "Your email or password is correct"
 
 **Actual Result**
-* User successfully logged in
+* System displays error message correctly
 
 **Status**
 * Pass
