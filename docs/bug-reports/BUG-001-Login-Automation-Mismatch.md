@@ -34,4 +34,4 @@
 * Open
 
 **Evidence**
-* Screenshot attached: target/screenshots/BUG-001-failed-login.png 
+* Screenshot attached: screenshots/BUG-001-failed-login.png 
