@@ -22,3 +22,8 @@ HAVING COUNT(*) > 1;
 SELECT *
 FROM cart
 WHERE user_id = 1;
+
+-- Verify order created
+SELECT *
+FROM orders
+WHERE user_id = 1;
