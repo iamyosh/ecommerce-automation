@@ -11,6 +11,7 @@
 * Order creation check
 * Payment status check
 * Missing product data validation
+* Correct order linked to user validation
 
 **Tools used**
 * MySQL
@@ -24,3 +25,4 @@ Sample Checks
 * Verified successful order creation
 * Verified payment status
 * Verified no missing product data exist
+* Verified correct order inked to user

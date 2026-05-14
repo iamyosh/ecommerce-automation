@@ -42,3 +42,9 @@ WHERE payment_status = 'FAILED';
 SELECT *
 FROM products
 WHERE product_name IS NULL;
+
+--Verify order linked to valid user
+SELECT orders.order_id, users.user_id
+FROM orders
+JOIN users
+ON orders.user_id = users.user_id;
