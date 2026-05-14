@@ -37,3 +37,8 @@ WHERE user_id = 1;
 SELECT *
 FROM payments
 WHERE payment_status = 'FAILED';
+
+-- Verify empty product names
+SELECT *
+FROM products
+WHERE product_name IS NULL;

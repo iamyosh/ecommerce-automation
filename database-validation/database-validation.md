@@ -10,6 +10,7 @@
 * Cart data check
 * Order creation check
 * Payment status check
+* Missing product data validation
 
 **Tools used**
 * MySQL
@@ -22,3 +23,4 @@ Sample Checks
 * Verified cart data stored correctly
 * Verified successful order creation
 * Verified payment status
+* Verified no missing product data exist
