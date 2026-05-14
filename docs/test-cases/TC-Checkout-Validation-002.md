@@ -40,3 +40,7 @@
 **Status**
 * Fail
 
+**Evidence**
+Screenshot path: 
+* screenshots/TC-002-Checkout-validation-payment-details.png
+* screenshots/TC-002-Checkout-validation.png
