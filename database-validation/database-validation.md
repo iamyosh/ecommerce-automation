@@ -8,6 +8,7 @@
 * Duplicate emails validation
 * Cart data check
 * Order creation check
+* Payment status check
 
 **Tools used**
 * MySQL
@@ -18,3 +19,4 @@ Sample Checks
 * Validated order total and product count
 * Verified cart data stored correctly
 * Verified successful order creation
+* Verified payment status

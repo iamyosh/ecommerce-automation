@@ -27,3 +27,8 @@ WHERE user_id = 1;
 SELECT *
 FROM orders
 WHERE user_id = 1;
+
+-- Verify payment status
+SELECT *
+FROM payments
+WHERE payment_status = 'FAILED';
