@@ -2,17 +2,18 @@
 
 A comprehensive automation testing framework developed for the [Automation Exercise] e-commerce website using Selenium WebDriver, Java, TestNG, Postman and SQL validation concepts.
 
-This project demonstrates QA practices like:
+This project demonstrates key QA practices like:
 
 * UI Automation Testing
-* API Testing
-* Manual Test Cases
+* API Testing with Postman
+* Manual Test Case design
 * Bug Reporting
 * Smoke Testing
 * Regression Testing
-* Database Validation
+* Database Validation with SQL
 * Screenshot Evidence Collection
-* Page Object Model (POM) Design Pattern
+* Page Object Model (POM) design
+* End-to-End E-Commerce Workflow Testing
 
 ---
 
@@ -53,7 +54,7 @@ Automation Exercise:
 
 ---
 
-# Testing Types Performed
+## Testing Types Performed
 
 * Functional Testing
 * Smoke Testing
@@ -120,9 +121,11 @@ screenshots/
  ├── BUG-002-missing-validation.png
  ├── TC-002-Checkout-validation.png
  ├── TC-002-Checkout-validation-payment-details.png
- 
-
+ │
 database-validation/
+ ├── database-validation.md
+ ├── validation-queries.sql
+ │
 README.md
 pom.xml
 ```
@@ -131,7 +134,7 @@ pom.xml
 
 # Automated Test Scenarios
 
-## User Authentication
+### User Authentication
 
 * Valid Login
 * Invalid Login
@@ -139,38 +142,37 @@ pom.xml
 * Duplicate Email Validation
 * Signup Validation
 
-## Product Testing
+### Product Testing
 
 * Product Search
 * Product Details Validation
 * Add to Cart
 * Remove from Cart
 
-## Cart & Checkout Testing
+### Cart & Checkout Testing
 
 * Cart Validation
 * Checkout Validation
 * Payment Validation
 * Order Workflow Validation
 
-## Contact Us Testing
+### Contact Us Testing
 
 * Contact Form Validation
 
 ---
-
 # API Testing
 
 API testing was performed using Postman for Automation Exercise APIs.
 
-## APIs Tested
+### APIs Tested
 
 * Get All Products API
 * Search Product API
 * Verify Login API
 * Invalid Login Validation
 
-## API Validations Performed
+### API Validations Performed
 
 * Status code validation
 * Response body validation
@@ -178,7 +180,7 @@ API testing was performed using Postman for Automation Exercise APIs.
 * Negative testing
 * Product data verification
 
-## Postman Collection
+### Postman Collection
 
 The exported Postman collection is available inside:
 
@@ -200,9 +202,8 @@ SQL validation queries were created to demonstrate backend data validation conce
 * Order validation
 * Cart validation
 * Payment validation
-* Data integrity checks
 
-## SQL Validation File
+### SQL Validation File
 
 ```plaintext
 database-validation/validation-queries.sql
@@ -216,22 +217,22 @@ Professional bug reports were documented with:
 
 * Bug ID
 * Summary
-* Steps to reproduce
+* Environment
 * Expected result
 * Actual result
 * Severity
 * Priority
 * Status
+* Evidence
 
-## Sample Bugs Reported
+### Sample Bugs Reported
 
 * Failed login issue
 * Missing validation issue
-* Duplicate email validation issue
 
 ---
 
-# Screenshots & Evidence
+## Screenshots & Evidence
 
 Testing evidence and execution screenshots are included inside:
 
@@ -242,15 +243,14 @@ screenshots/
 ## Included Evidence
 
 * API testing screenshots
-* Login validation screenshots
-* Checkout validation screenshots
+* Test case screenshots
 * Bug evidence screenshots
 
 ---
 
 # How to Run the Project
 
-## Prerequisites
+### Prerequisites
 
 Install the following:
 
@@ -261,7 +261,7 @@ Install the following:
 
 ---
 
-## Clone Repository
+### Clone Repository
 
 ```bash
 git clone https://github.com/iamyosh/ecommerce-automation.git
@@ -269,13 +269,13 @@ git clone https://github.com/iamyosh/ecommerce-automation.git
 
 ---
 
-## Open Project
+### Open Project
 
 Open the project using IntelliJ IDEA.
 
 ---
 
-## Install Dependencies
+### Install Dependencies
 
 Maven dependencies will be downloaded automatically.
 
@@ -287,7 +287,7 @@ mvn clean install
 
 ---
 
-## Run Test Cases
+### Run Test Cases
 
 Run individual TestNG test classes from:
 
@@ -302,39 +302,3 @@ mvn test
 ```
 
 ---
-
-# Key QA Concepts Demonstrated
-
-* Selenium Automation Framework Design
-* Page Object Model (POM)
-* Manual Test Case Design
-* Defect Reporting & Tracking
-* API Testing with Postman
-* SQL Database Validation
-* Smoke & Regression Testing
-* End-to-End E-Commerce Workflow Testing
-
----
-
-# Future Improvements
-
-Potential enhancements for the framework:
-
-* Extent Reports integration
-* CI/CD with GitHub Actions
-* Docker integration
-* Cross-browser testing
-* Data-driven testing
-* Parallel test execution
-
----
-
-# Author
-
-Developed as a Software Quality Assurance automation portfolio project for demonstrating practical QA engineering skills.
-
----
-
-# License
-
-This project is for educational and portfolio purposes.
