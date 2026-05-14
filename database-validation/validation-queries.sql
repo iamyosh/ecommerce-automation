@@ -18,6 +18,11 @@ FROM users
 GROUP BY email
 HAVING COUNT(*) > 1;
 
+-- Verify invalid emails
+SELECT *
+FROM users
+WHERE email NOT LIKE '%@%';
+
 -- Verify cart items
 SELECT *
 FROM cart
