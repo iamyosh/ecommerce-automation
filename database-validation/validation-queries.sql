@@ -17,3 +17,8 @@ SELECT email, COUNT(*)
 FROM users
 GROUP BY email
 HAVING COUNT(*) > 1;
+
+-- Verify cart items
+SELECT *
+FROM cart
+WHERE user_id = 1;

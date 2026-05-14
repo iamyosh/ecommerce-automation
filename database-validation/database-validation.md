@@ -6,6 +6,7 @@
 * Product count validation
 * Order total check
 * Duplicate emails validation
+* Cart data check
 
 **Tools used**
 * MySQL
@@ -14,3 +15,4 @@ Sample Checks
 * Verified users inserted after signup
 * Verified no duplicate emails exist
 * Validated order total and product count
+* Verified cart data stored correctly
