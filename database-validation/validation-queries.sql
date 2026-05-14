@@ -1,4 +1,4 @@
--- Verify user exists after signup
+-- Verify user registration
 SELECT *
 FROM users
 WHERE email = 'test@example.com';
